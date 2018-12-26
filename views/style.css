@@ -1,0 +1,16 @@
+body{
+    background-color: khaki;
+}
+#articles{
+    width: 800px;
+    margin-left: 27%;
+}
+h1, h3{
+    text-align: center;
+    margin-left: 27%;
+    color: blue;
+    width: 800px;
+}
+h5{
+    margin-top: 2%;
+}

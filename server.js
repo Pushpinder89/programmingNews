@@ -31,7 +31,7 @@ app.engine(
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
   // Make public a static folder
-  app.use(express.static("public"));
+  app.use(express.static("views"));
   
   // Connect to the Mongo DB
   mongoose.connect("mongodb://localhost/codingArticals", { useNewUrlParser: true });
@@ -40,14 +40,18 @@ app.engine(
   app.get("/", function(req, res) {
     db.Article.find().then(function(articles){
       console.log(articles);
-      res.render("index", {name:"Pushpinder", articles:articles});
+      res.render("index", {articles:articles});
     })
 
    });
 
-   app.get("/saved", function(req, res) {
-    res.render("comments");
+   app.get("/comments", function(req, res) {
+    db.Comment.find().then(function(comments){
+      console.log(comments);
+      res.render("comments", {comments:comments});
+    })
    });
+
 // A GET route for scraping the echoJS website
 app.get("/scrape", function(req, res) {
 // this code clears the database everytime i run this scrape code

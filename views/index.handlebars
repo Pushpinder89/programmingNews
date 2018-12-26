@@ -1,10 +1,20 @@
-  <div id="articles">
-     {{#each articles}}
-    <p>{{title}}</p>
+
+   {{#each articles}}
+   <div class="card text-center" id="articles">
+  <div class="card-body">
+    <h4>{{title}}</h4>
     <p><a href="https://www.freecodecamp.org{{link}}">https://www.freecodecamp.org{{link}}</a></p>
     <p>{{description}}</p>
-    <hr />
+    {{!-- <hr /> --}}
+       <a href="https://www.freecodecamp.org{{link}}" class="btn btn-primary">Read More</a>
+       <div class="form-group">
+         <h5><label for="comment">Comment:</label></h5>
+         <textarea class="form-control" rows="3" id="comment"></textarea>
+      </div>
+      <button class="btn btn-primary">Submit</button> <button class="btn btn-primary" id="seeAll">See All Comments</button>
+  </div>
+</div>
+<br />
     {{/each}}
- </div>
 
 
