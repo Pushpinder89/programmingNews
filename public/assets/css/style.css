@@ -2,12 +2,15 @@ body{
    
     background-image: url("/assets/images/images.png");
     background-color: dimgray;
+    max-width:100%;
 }
 #articles{
     width: 800px;
     margin-left: 27%;
+    margin-bottom: 1%;
     background-color: beige;
     box-shadow: 2px 5px 10px 10px lightslategrey;
+    max-width:100%;
 }
 h1, h3{
     text-align: center;
@@ -15,12 +18,30 @@ h1, h3{
     background-color: darkolivegreen;
     color: white;
     width: 800px;
+    max-width:100%;
+}
+h5{
+    margin-top: 2%;
 }
 #titleDiv{
     margin-top: 5px;
     background-color: lavender;
     height: 150px;
+    max-width:100%;
 }
-h5{
-    margin-top: 2%;
+#footer{
+ text-align: center;
+ color: darkolivegreen;
+ font-size: 15px;
+ padding: 15px;
+background-color: lavender;
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+max-width:100%;
+}
+#mainArtiDiv{
+    margin-bottom: 2%;
+    max-width:100%;
 }
