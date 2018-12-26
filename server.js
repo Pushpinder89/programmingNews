@@ -9,7 +9,7 @@ var cheerio = require("cheerio");
 // Require all models
 var db = require("./models");
 
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 
 // Create an instance of the express app.
@@ -31,11 +31,12 @@ app.engine(
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
   // Make public a static folder
-  app.use(express.static("views"));
+  app.use(express.static("public"));
   
   // Connect to the Mongo DB
-  mongoose.connect("mongodb://localhost/codingArticals", { useNewUrlParser: true });
-  
+  var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/codingArticals";
+  // Connect to the Mongo DB
+  mongoose.connect(MONGODB_URI);
   // Routes........................................
   app.get("/", function(req, res) {
     db.Article.find().then(function(articles){
@@ -55,10 +56,10 @@ app.engine(
 // A GET route for scraping the echoJS website
 app.get("/scrape", function(req, res) {
 // this code clears the database everytime i run this scrape code
-  db.Article.deleteMany(function (err) {
-    if (err) throw err;
-    console.log("Database cleared");
-  });
+  // db.Article.deleteMany(function (err) {
+  //   if (err) throw err;
+  //   console.log("Database cleared");
+  // });
   // First, we grab the body of the html with axios
   axios.get("https://www.freecodecamp.org/forum/").then(function(response) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector

@@ -1,0 +1,26 @@
+body{
+   
+    background-image: url("/assets/images/images.png");
+    background-color: dimgray;
+}
+#articles{
+    width: 800px;
+    margin-left: 27%;
+    background-color: beige;
+    box-shadow: 2px 5px 10px 10px lightslategrey;
+}
+h1, h3{
+    text-align: center;
+    margin-left: 27%;
+    background-color: darkolivegreen;
+    color: white;
+    width: 800px;
+}
+#titleDiv{
+    margin-top: 5px;
+    background-color: lavender;
+    height: 150px;
+}
+h5{
+    margin-top: 2%;
+}
